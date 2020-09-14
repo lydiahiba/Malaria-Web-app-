@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+<title>{% block title %}Malaria Detection Web App{% endblock %}</title>
+
+
+
+{% block content %}
+<div class="jumbotron">
+	<h1 class="display-4">Malaria Diagnosis Web App</h1>
+	<p class="lead">L'application permets de faciliter le diagnostic de vos patients</p>
+	<hr class="my-4">
+	<p><h4>Les fichiers sélectionnés doivent être d'extensions: Jpeg , tiff, png</h4></p>
+	<p>
+		{% with messages = get_flashed_messages() %} <!-- il doivent toujours ce message flashing etre avant l'action qu'on veut flaser c'esta dire qu'on veut s'assurer quelle c'est réaliser dans notre ca le upload des image afin de faire la prediction -->
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+			  <li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		  {% endif %}
+		{% endwith %}
+	</p>
+	<h5>Sélectionner les Photos à Prédire</h5>
+	<form method="post" action="/" enctype="multipart/form-data">
+		<dl>
+			<p>
+				<input type="file" name="files[]" multiple="">  <!--   pour selectionner plusieurs fichier on ajoute a l'attribut multiple entre parnthese la string "multiple"apres faut voir comment faire pour la prédiction pour le modéle -->
+			</p>
+		</dl>
+	</form>
+	<a class="btn btn-primary btn-lg" href="#" type="submit" role="button">Predict</a>
+  </div>
+{% endblock %}
+
+
+  <!-- <button type="submit" class="btn btn-secondary">Submit</button> -->
+
+
+
+<!-- <div class="flex-container">
+<div class="center-text"><h4>L'application vous permets d'effectuer le diagnostic de vous patients</h4><p>Les fichiers sélectionnés doivent être d'extensions: jpeg, tiff, png</p>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<h4>Sélectionner les fichiers à télécharger</h4>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="files[]" multiple="">
+		</p>
+    </dl>
+    <p>
+		<button type="submit" class="btn btn-secondary">Submit</button>
+	</p>
+</form>
+</div>
+
+</body>
+</html>
+
