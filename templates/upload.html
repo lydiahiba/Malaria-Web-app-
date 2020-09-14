@@ -24,13 +24,13 @@
 	<form method="post" action="/" enctype="multipart/form-data">
 		<dl>
 			<p>
-				<input type="file" name="files[]" multiple="">  <!--   pour selectionner plusieurs fichier on ajoute a l'attribut multiple entre parnthese la string "multiple"apres faut voir comment faire pour la prédiction pour le modéle -->
+				<input type="file" name="files" multiple="">  <!--   pour selectionner plusieurs fichier on ajoute a l'attribut multiple entre parnthese la string "multiple"apres faut voir comment faire pour la prédiction pour le modéle -->
 			</p>
 		</dl>
+		<button type="submit" class="btn btn-primary">Predict</button>
 	</form>
-	<button type="submit" class="btn btn-secondary">Predict</button>
   </div>
-{% endblock %}
+{% endblock %} 
 
 
   <!-- <button type="submit" class="btn btn-secondary">Submit</button> -->

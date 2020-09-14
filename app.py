@@ -100,11 +100,11 @@ def upload_form():
 @app.route('/', methods=['GET','POST'])
 def upload_file():
     if request.method == 'POST':
-        if 'files[]' not in request.files:
+        if 'files' not in request.files:
             flash('No file part')
             return redirect(request.url)
-        files = request.files.getlist('files[]')
-        for f in request.files.getlist('files[]'):
+        files = request.files.getlist('files')
+        for f in request.files.getlist('files'):
             basepath = os.path.dirname(__file__)
             file_path = os.path.join(
                 basepath, 'uploads', secure_filename(f.filename))
