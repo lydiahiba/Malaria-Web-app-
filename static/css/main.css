@@ -44,6 +44,23 @@ input[type="file"] {
     animation: spin 1s linear infinite;
 }
 
+body {font-family: arial, sans serif;}
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content:center;
+	background-color: #d95700;
+	}
+	.flex-container >div{
+	background-color:#f1f1f1;
+	margin: 10px;
+	padding: 20px;
+	font-size: 30px;
+	}
+	
+	.center-text {text-align: center;}
+	.extra-text {font-size: 1.5em;}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

@@ -109,7 +109,7 @@ def upload_file():
             file_path = os.path.join(
                 basepath, 'uploads', secure_filename(f.filename))
             f.save(file_path)
-            flash('File(s) successfully uploaded')
+            flash('File(s) successfully uploaded') # ça permet d'afficher que le fichier a été uploader succcessfuly on trouve le code html dans le upload.html et pour la doc afin de comprendre ça : https://flask.palletsprojects.com/en/0.12.x/patterns/flashing/
             pred = model_predict(file_path, model)
             str1 = 'Malaria Parasitized'
             str2 = 'Normal'

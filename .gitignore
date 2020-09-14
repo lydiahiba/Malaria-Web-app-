@@ -3,3 +3,7 @@ uploads/*.png
 __pycache__
 .ipynb_checkpoints
 venv 
+browser.html
+index.html
+results.html
+manage.html
